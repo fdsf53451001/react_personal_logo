@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './css/index.css';
+import App from './js/App';
+import reportWebVitals from './js/reportWebVitals';
+import PersonalLogo from './js/PersonalLogo';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
+  <PersonalLogo source='https://api.github.com/users/fdsf53451001'/>,
   document.getElementById('root')
 );
 
