@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import {apiGetUserRequest} from './API';
 
 import Card from '@material-ui/core/Card';
 import Avatar from '@material-ui/core/Avatar';
@@ -48,8 +49,23 @@ class PersonalLogo extends React.Component{
         // step 2. import $ from 'jquery'; 
 
          /* eslint-env jquery */
-        $.get(this.props.source,(result) => {
+        // $.get(this.props.source,(result) => {
+        //     if(result){
+        //         this.setState({
+        //             login : result.login,
+        //             html_url : result.html_url,
+        //             name : result.name,
+        //             photo : result.avatar_url,
+        //             followers : result.followers,
+        //             following : result.following,
+        //         })
+        //     }
+        // });
+
+        // following code call API.js to send api request
+        apiGetUserRequest().then(result => {
             if(result){
+                result = result.data;
                 this.setState({
                     login : result.login,
                     html_url : result.html_url,
